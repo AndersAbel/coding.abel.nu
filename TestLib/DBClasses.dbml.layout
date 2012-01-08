@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DBClasses">
+  <DataContextMoniker Name="/DBContext" />
+  <nestedChildShapes>
+    <classShape Id="4f3e502e-5210-4b92-b1d8-40a242ad7649" absoluteBounds="4.375, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBContext/Car" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7778d6e5-81a4-4f24-9b89-9472de439099" absoluteBounds="4.39, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a9280c0-9e2b-463b-a91b-8ffedb364d53" absoluteBounds="2.125, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DBContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e795b51-42e4-49fd-b6ff-7ce93dba6dd9" absoluteBounds="2.1399999999999997, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7904309-6c79-4fc6-99ef-b9d3abfd7570" absoluteBounds="3.75, 4, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBContext/FrequentDriver" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cc7a0ed-ee1c-420e-9d67-1de0ab7fd637" absoluteBounds="3.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.0625 : 3.45359537760417); (5.0625 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBContext/Car/Car_FrequentDriver" />
+      <nodes>
+        <classShapeMoniker Id="4f3e502e-5210-4b92-b1d8-40a242ad7649" />
+        <classShapeMoniker Id="c7904309-6c79-4fc6-99ef-b9d3abfd7570" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.9375 : 3.34780110677083); (3.9375 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBContext/Person/Person_FrequentDriver" />
+      <nodes>
+        <classShapeMoniker Id="6a9280c0-9e2b-463b-a91b-8ffedb364d53" />
+        <classShapeMoniker Id="c7904309-6c79-4fc6-99ef-b9d3abfd7570" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
