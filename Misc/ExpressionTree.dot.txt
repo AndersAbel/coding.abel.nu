@@ -1,0 +1,10 @@
+digraph {
+	node [shape=record, fontsize=12];
+	Expression [label="{Expression&lt;Func&lt;TSource, TMember&gt;&gt; expression | { NodeType\nLambda |<Parameters>	Parameters |  <Body>Body }}"];
+	Expression:Body -> Body;
+	Expression:Parameters -> Parameters;
+	Parameters [label="ReadOnlyCollection&lt;ParameterExpression&gt;"];
+	Body [label="{MemberExpression | { NodeType\nMemberAccess | <Member>Member }}"];
+	Body:Member -> Member;
+	Member [label="{RuntimePropertyInfo | { Name\n\"FullName\" } }"];
+}

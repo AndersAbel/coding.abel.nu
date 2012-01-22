@@ -14,6 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingAbelNu.Utilities", "CodingAbelNu.Utilities\CodingAbelNu.Utilities.csproj", "{352DDF77-14F5-423A-98A3-8C96507289F9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{27890E53-DB71-40BC-A1AB-644F1A16400C}"
+	ProjectSection(SolutionItems) = preProject
+		Misc\ExpressionTree.dot.txt = Misc\ExpressionTree.dot.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingAbelNu.UtilitiesTest", "CodingAbelNu.UtilitiesTest\CodingAbelNu.UtilitiesTest.csproj", "{FE7BCA8C-DD96-4E52-9515-1A5E78A0A326}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = BlogCode.vsmdi
@@ -35,6 +42,10 @@ Global
 		{352DDF77-14F5-423A-98A3-8C96507289F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{352DDF77-14F5-423A-98A3-8C96507289F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{352DDF77-14F5-423A-98A3-8C96507289F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7BCA8C-DD96-4E52-9515-1A5E78A0A326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7BCA8C-DD96-4E52-9515-1A5E78A0A326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7BCA8C-DD96-4E52-9515-1A5E78A0A326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7BCA8C-DD96-4E52-9515-1A5E78A0A326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
