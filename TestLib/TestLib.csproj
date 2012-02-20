@@ -33,9 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.3.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -54,6 +59,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Brand.cs" />
+    <Compile Include="Entities\Car.cs" />
+    <Compile Include="Entities\CarBodyStyle.cs" />
+    <Compile Include="Entities\CarsContext.cs" />
     <Compile Include="FirstPage.cs" />
     <Compile Include="LibraryCode\ApplicationLogger.cs" />
     <Compile Include="LibraryCode\LibraryLogger.cs" />
@@ -82,6 +91,7 @@
       <LastGenOutput>DBClasses.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
