@@ -68,6 +68,11 @@
     <Compile Include="LibraryCode\LibraryLogger.cs" />
     <Compile Include="LogWriter.cs" />
     <Compile Include="LogWriterFromDisposable.cs" />
+    <Compile Include="Migrations\201202201920484_IX_Car_BrandId.cs" />
+    <Compile Include="Migrations\201202201920484_IX_Car_BrandId.Designer.cs">
+      <DependentUpon>201202201920484_IX_Car_BrandId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NullHandlingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

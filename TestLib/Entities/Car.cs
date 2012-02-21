@@ -14,7 +14,6 @@ public class Car
     public Brand Brand { get; set; }
 
     [ForeignKey("Brand")]
- 
     public int BrandId { get; private set; }
     
     [Required]
