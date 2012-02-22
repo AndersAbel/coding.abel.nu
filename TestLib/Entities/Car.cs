@@ -24,5 +24,9 @@ public class Car
     public CarBodyStyle BodyStyle { get; set; }
 
     public int? TopSpeed { get; set; }
+
+    [Required]
+    [StringLength(20)]
+    public string Color { get; set; }
 }
 }

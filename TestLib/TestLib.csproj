@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201202221302479_Car_TopSpeed.Designer.cs">
       <DependentUpon>201202221302479_Car_TopSpeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201202221335547_Car_Color.cs" />
+    <Compile Include="Migrations\201202221335547_Car_Color.Designer.cs">
+      <DependentUpon>201202221335547_Car_Color.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NullHandlingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
