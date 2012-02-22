@@ -22,5 +22,7 @@ public class Car
 
     [Column("BodyStyle", TypeName="int")]
     public CarBodyStyle BodyStyle { get; set; }
+
+    public int? TopSpeed { get; set; }
 }
 }

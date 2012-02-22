@@ -7,10 +7,10 @@ namespace TestLib.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<TestLib.Entities.CarsContext>
     {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = true;
-        }
+public Configuration()
+{
+    AutomaticMigrationsEnabled = false;
+}
 
         protected override void Seed(TestLib.Entities.CarsContext context)
         {
