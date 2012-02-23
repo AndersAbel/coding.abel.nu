@@ -4,6 +4,8 @@ namespace TestLib.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+using TestLib.Entities;
+    using System.Collections.Generic;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TestLib.Entities.CarsContext>
     {
@@ -16,16 +18,27 @@ public Configuration()
         {
             //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var brands = new string[] { "Volvo", "Saab" }
+                .Select(s => new Brand { Name = s })
+                .ToDictionary(b => b.Name);
+
+            context.Brands.AddOrUpdate(b => b.Name, brands["Volvo"], brands["Saab"]);
+
+            context.Cars.AddOrUpdate(c => c.RegistrationNumber,
+                new Car
+                {
+                    Brand = brands["Volvo"],
+                    RegistrationNumber = "ABC123",
+                    TopSpeed = 210,
+                    Color = "Red"
+                },
+                new Car
+                {
+                    Brand = brands["Saab"],
+                    RegistrationNumber = "XYZ987",
+                    TopSpeed = 250,
+                    Color = "Blue"
+                });
         }
     }
 }
