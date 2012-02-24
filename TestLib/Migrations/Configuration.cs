@@ -4,15 +4,25 @@ namespace TestLib.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-using TestLib.Entities;
+    using TestLib.Entities;
     using System.Collections.Generic;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TestLib.Entities.CarsContext>
+    public sealed class Configuration : DbMigrationsConfiguration<TestLib.Entities.CarsContext>
     {
-public Configuration()
-{
-    AutomaticMigrationsEnabled = false;
-}
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+        }
+
+        public static void Seed()
+        {
+            using (var context = new CarsContext())
+            {
+                new Configuration().Seed(context);
+
+                context.SaveChanges();
+            }
+        }
 
         protected override void Seed(TestLib.Entities.CarsContext context)
         {
@@ -27,18 +37,24 @@ public Configuration()
             context.Cars.AddOrUpdate(c => c.RegistrationNumber,
                 new Car
                 {
-                    Brand = brands["Volvo"],
+                    BrandId = brands["Volvo"].BrandId,
                     RegistrationNumber = "ABC123",
                     TopSpeed = 210,
                     Color = "Red"
                 },
                 new Car
                 {
-                    Brand = brands["Saab"],
+                    BrandId = brands["Saab"].BrandId,
                     RegistrationNumber = "XYZ987",
                     TopSpeed = 250,
                     Color = "Blue"
                 });
+
+            context.People.AddOrUpdate(p => p.BirthYear,
+                new Person { BirthYear = 1979 },
+                new Person { BirthYear = 2006 },
+                new Person { BirthYear = 2009 }
+                );
         }
     }
 }

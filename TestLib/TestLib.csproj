@@ -63,6 +63,7 @@
     <Compile Include="Entities\Car.cs" />
     <Compile Include="Entities\CarBodyStyle.cs" />
     <Compile Include="Entities\CarsContext.cs" />
+    <Compile Include="Entities\Person.cs" />
     <Compile Include="FirstPage.cs" />
     <Compile Include="LibraryCode\ApplicationLogger.cs" />
     <Compile Include="LibraryCode\LibraryLogger.cs" />
@@ -79,6 +80,10 @@
     <Compile Include="Migrations\201202221335547_Car_Color.cs" />
     <Compile Include="Migrations\201202221335547_Car_Color.Designer.cs">
       <DependentUpon>201202221335547_Car_Color.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201202232002181_People.cs" />
+    <Compile Include="Migrations\201202232002181_People.Designer.cs">
+      <DependentUpon>201202232002181_People.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NullHandlingExtensions.cs" />

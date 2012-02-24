@@ -7,6 +7,7 @@ using TestLib.Entities;
 using System.Transactions;
 using System.Data.Entity;
 using System.Diagnostics;
+using TestLib.Migrations;
 
 namespace TestLibTests
 {
@@ -50,15 +51,25 @@ namespace TestLibTests
             using (TransactionScope ts = new TransactionScope())
             using (CarsContext context = new CarsContext())
             {
-                Debug.WriteLine("Reading cars...");
-                var cars = context.Cars.ToArray();
-                Debug.WriteLine("Updating top speed of the first car...");
-                Debug.WriteLine(string.Format("Type of car[0] is {0}", cars[0].GetType().ToString()));
-                cars[0].TopSpeed = 260;
+                context.Configuration.AutoDetectChangesEnabled = false;
+
+                Debug.WriteLine("Reading people...");
+                var people = context.People.ToArray();
+                Debug.WriteLine(string.Format("Type of people[0] is {0}",
+                    people[0].GetType().ToString()));
+
+                Debug.WriteLine("Updating birth year of first person...");
+                people[0].BirthYear = 1965;
 
                 Debug.WriteLine("Saving changes...");
                 context.SaveChanges();
             }
+        }
+
+        [TestMethod]
+        public void TestSeed()
+        {
+            Configuration.Seed();
         }
     }
 }
