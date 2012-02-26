@@ -28,11 +28,11 @@ namespace TestLib.Migrations
         {
             //  This method will be called after migrating to the latest version.
 
-            var brands = new string[] { "Volvo", "Saab" }
+            var brands = new string[] { "Volvo", "Saab", "Audi" }
                 .Select(s => new Brand { Name = s })
                 .ToDictionary(b => b.Name);
 
-            context.Brands.AddOrUpdate(b => b.Name, brands["Volvo"], brands["Saab"]);
+            context.Brands.AddOrUpdate(b => b.Name, brands["Volvo"], brands["Saab"], brands["Audi"]);
 
             context.Cars.AddOrUpdate(c => c.RegistrationNumber,
                 new Car
@@ -55,6 +55,11 @@ namespace TestLib.Migrations
                 new Person { BirthYear = 2006 },
                 new Person { BirthYear = 2009 }
                 );
+
+            context.Genders.AddOrUpdate(
+                new Gender() { GenderId = Gender.UnSpecified, Description = "UnSpecified" },
+                new Gender() { GenderId = Gender.Male, Description = "Male" },
+                new Gender() { GenderId = Gender.Female, Description = "Female" });
         }
     }
 }

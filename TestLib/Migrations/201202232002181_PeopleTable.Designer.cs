@@ -4,7 +4,7 @@ namespace TestLib.Migrations
     using System.Data.Entity.Migrations;
     using System.Data.Entity.Migrations.Infrastructure;
     
-    public sealed partial class People : IMigrationMetadata
+    public sealed partial class PeopleTable : IMigrationMetadata
     {
         string IMigrationMetadata.Id
         {

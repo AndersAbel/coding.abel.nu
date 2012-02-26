@@ -6,27 +6,28 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TestLib.Entities
 {
-public class Car
-{
-    public int CarId { get; private set; }
-    
-    //[ForeignKey("Car_Brand")]
-    public Brand Brand { get; set; }
+    // Keep this class non-compatible with change tracking proxies.
+    public class Car
+    {
+        public int CarId { get; private set; }
 
-    //[ForeignKey("Brand")]
-    public int BrandId { get; set; }
-    
-    [Required]
-    [StringLength(6)]
-    public string RegistrationNumber { get; set; }
+        [ForeignKey("BrandId")]
+        public Brand Brand { get; set; }
 
-    [Column("BodyStyle", TypeName="int")]
-    public CarBodyStyle BodyStyle { get; set; }
+        [ForeignKey("Brand")]
+        public int BrandId { get; set; }
 
-    public int? TopSpeed { get; set; }
+        [Required]
+        [StringLength(6)]
+        public string RegistrationNumber { get; set; }
 
-    [Required]
-    [StringLength(20)]
-    public string Color { get; set; }
-}
+        [Column("BodyStyle", TypeName = "int")]
+        public CarBodyStyle BodyStyle { get; set; }
+
+        public int? TopSpeed { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        public string Color { get; set; }
+    }
 }

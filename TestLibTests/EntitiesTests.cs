@@ -35,7 +35,6 @@ namespace TestLibTests
                 Brand volvo = new Brand { Name = "Volvo" };
                 Car myVolvo = new Car
                 {
-                    //BodyStyle = CarBodyStyle.StationWagon,
                     Brand = volvo,
                     RegistrationNumber = "ABC123"
                 };
@@ -70,6 +69,134 @@ namespace TestLibTests
         public void TestSeed()
         {
             Configuration.Seed();
+        }
+
+        [TestMethod]
+        public void TestNavigationAndForeignKeySetKey()
+        {
+            using (TransactionScope ts = new TransactionScope())
+            using (CarsContext context = new CarsContext())
+            {
+                var brands = context.Brands.Include(b => b.Cars).OrderBy(b => b.BrandId);
+                var car = brands.First().Cars.First();
+
+                Debug.WriteLine("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name);
+                Brand newBrand = brands.Skip(1).First();
+                Debug.WriteLine(string.Format("Setting BrandId to {0}", newBrand.BrandId));
+                car.BrandId = newBrand.BrandId;
+                Debug.WriteLine(string.Format("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name));
+
+                Debug.WriteLine("Saving Changes...");
+                context.SaveChanges();
+                Debug.WriteLine(string.Format("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name));
+            }
+        }
+
+        [TestMethod]
+        public void TestNavigationAndForeignKeySetNavigationProperty()
+        { 
+            using (TransactionScope ts = new TransactionScope())
+            using (CarsContext context = new CarsContext())
+            {
+                var brands = context.Brands.Include(b => b.Cars).OrderBy(b => b.BrandId);
+                var car = brands.First().Cars.First();
+
+                Debug.WriteLine("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name);
+                Brand newBrand = brands.Skip(1).First();
+                Debug.WriteLine(string.Format("Setting Brand to {0}", newBrand.Name));
+                car.Brand = newBrand;
+                Debug.WriteLine(string.Format("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name));
+
+                Debug.WriteLine("Saving Changes...");
+                context.SaveChanges();
+                Debug.WriteLine(string.Format("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name));
+            }
+        }
+
+        [TestMethod]
+        //[ExpectedException(typeof(InvalidOperationException))]
+        public void TestNavigationAndForeignKeyConflictingChanges()
+        {
+            using (TransactionScope ts = new TransactionScope())
+            using (CarsContext context = new CarsContext())
+            {
+                var brands = context.Brands.Include(b => b.Cars).OrderBy(b => b.BrandId);
+                var car = brands.First().Cars.First();
+
+                Debug.WriteLine("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name);
+                Brand newBrand = brands.Skip(1).First();
+                int newBrandId = brands.Skip(2).First().BrandId;
+
+                Debug.WriteLine(string.Format("Setting Brand to {0}", newBrand.Name));
+                car.Brand = newBrand;
+                Debug.WriteLine(string.Format("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name));
+
+                Debug.WriteLine(string.Format("Setting BrandId to {0}", newBrandId));
+                car.BrandId = newBrandId;
+                Debug.WriteLine(string.Format("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name));
+
+                Debug.WriteLine("Saving Changes...");
+                context.SaveChanges();
+                Debug.WriteLine(string.Format("The car has BrandId {0} pointing to Brand \"{1}\"",
+                    car.BrandId, car.Brand.Name));
+            }
+        }
+
+        [TestMethod]
+        public void TestNavigationAndForeignKeySetKeyWithProxy()
+        {
+            using (TransactionScope ts = new TransactionScope())
+            using (CarsContext context = new CarsContext())
+            {
+                var genders = context.Genders.Include(g => g.People).OrderBy(g => g.GenderId);
+                var person = genders.First().People.First();
+
+                Debug.WriteLine("The person has GenderId {0} pointing to Gender \"{1}\"",
+                    person.GenderId, person.Gender.Description);
+                Gender newGender = genders.Skip(1).First();
+                Debug.WriteLine(string.Format("Setting GenderId to {0}", newGender.GenderId));
+                person.GenderId = newGender.GenderId;
+                Debug.WriteLine("The person has GenderId {0} pointing to Gender \"{1}\"",
+                    person.GenderId, person.Gender.Description);
+
+                Debug.WriteLine("Saving Changes...");
+                context.SaveChanges();
+                Debug.WriteLine("The person has GenderId {0} pointing to Gender \"{1}\"",
+                    person.GenderId, person.Gender.Description);
+            }
+        }
+
+        [TestMethod]
+        public void TestNavigationAndForeignKeySetNavigationPropertyWithProxy()
+        {
+            using (TransactionScope ts = new TransactionScope())
+            using (CarsContext context = new CarsContext())
+            {
+                var genders = context.Genders.Include(g => g.People).OrderBy(g => g.GenderId);
+                var person = genders.First().People.First();
+
+                Debug.WriteLine("The person has GenderId {0} pointing to Gender \"{1}\"",
+                    person.GenderId, person.Gender.Description);
+                Gender newGender = genders.Skip(1).First();
+                Debug.WriteLine(string.Format("Setting Gender to {0}", newGender.Description));
+                person.Gender = newGender;
+                Debug.WriteLine("The person has GenderId {0} pointing to Gender \"{1}\"",
+                    person.GenderId, person.Gender.Description);
+
+                Debug.WriteLine("Saving Changes...");
+                context.SaveChanges();
+                Debug.WriteLine("The person has GenderId {0} pointing to Gender \"{1}\"",
+                    person.GenderId, person.Gender.Description);
+            }
         }
     }
 }

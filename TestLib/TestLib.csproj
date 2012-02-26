@@ -63,6 +63,7 @@
     <Compile Include="Entities\Car.cs" />
     <Compile Include="Entities\CarBodyStyle.cs" />
     <Compile Include="Entities\CarsContext.cs" />
+    <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="FirstPage.cs" />
     <Compile Include="LibraryCode\ApplicationLogger.cs" />
@@ -81,9 +82,17 @@
     <Compile Include="Migrations\201202221335547_Car_Color.Designer.cs">
       <DependentUpon>201202221335547_Car_Color.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201202232002181_People.cs" />
-    <Compile Include="Migrations\201202232002181_People.Designer.cs">
-      <DependentUpon>201202232002181_People.cs</DependentUpon>
+    <Compile Include="Migrations\201202232002181_PeopleTable.cs" />
+    <Compile Include="Migrations\201202232002181_PeopleTable.Designer.cs">
+      <DependentUpon>201202232002181_PeopleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201202241025511_GenderTable.cs" />
+    <Compile Include="Migrations\201202241025511_GenderTable.Designer.cs">
+      <DependentUpon>201202241025511_GenderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201202241038394_Person_Gender.cs" />
+    <Compile Include="Migrations\201202241038394_Person_Gender.Designer.cs">
+      <DependentUpon>201202241038394_Person_Gender.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NullHandlingExtensions.cs" />

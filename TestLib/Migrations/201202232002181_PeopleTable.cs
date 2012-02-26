@@ -2,7 +2,7 @@ namespace TestLib.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    public partial class People : DbMigration
+    public partial class PeopleTable : DbMigration
     {
         public override void Up()
         {
