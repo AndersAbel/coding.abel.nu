@@ -24,5 +24,7 @@ namespace TestLib.Entities
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Gender> Genders { get; set; }
+
+        public DbSet<PhoneBookEntry> PhoneBook { get; set; }
     }
 }

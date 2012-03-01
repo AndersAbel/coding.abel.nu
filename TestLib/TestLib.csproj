@@ -65,6 +65,7 @@
     <Compile Include="Entities\CarsContext.cs" />
     <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\PhoneBookEntry.cs" />
     <Compile Include="FirstPage.cs" />
     <Compile Include="LibraryCode\ApplicationLogger.cs" />
     <Compile Include="LibraryCode\LibraryLogger.cs" />
@@ -93,6 +94,10 @@
     <Compile Include="Migrations\201202241038394_Person_Gender.cs" />
     <Compile Include="Migrations\201202241038394_Person_Gender.Designer.cs">
       <DependentUpon>201202241038394_Person_Gender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201202261929004_PhoneBookTable.cs" />
+    <Compile Include="Migrations\201202261929004_PhoneBookTable.Designer.cs">
+      <DependentUpon>201202261929004_PhoneBookTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NullHandlingExtensions.cs" />

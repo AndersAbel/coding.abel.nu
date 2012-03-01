@@ -198,5 +198,21 @@ namespace TestLibTests
                     person.GenderId, person.Gender.Description);
             }
         }
+
+        [TestMethod]
+        public void TestChangeTrackingSimpleType()
+        {
+            using (TransactionScope ts = new TransactionScope())
+            using (CarsContext context = new CarsContext())
+            {
+                var phoneBook = context.PhoneBook.ToList();
+                var entry = phoneBook.First();
+
+                entry.PhoneNumber = "4567";
+
+                Debug.WriteLine("Saving changes...");
+                context.SaveChanges();
+            }
+        }
     }
 }

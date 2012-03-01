@@ -60,6 +60,10 @@ namespace TestLib.Migrations
                 new Gender() { GenderId = Gender.UnSpecified, Description = "UnSpecified" },
                 new Gender() { GenderId = Gender.Male, Description = "Male" },
                 new Gender() { GenderId = Gender.Female, Description = "Female" });
+
+            context.PhoneBook.AddOrUpdate(pbe => pbe.Name,
+                new PhoneBookEntry() { Name = "Charlie", PhoneNumber = "1234" },
+                new PhoneBookEntry() { Name = "Johhny", PhoneNumber = "9876" });
         }
     }
 }
