@@ -14,5 +14,10 @@ namespace TestService
         {
             return term1 + term2;
         }
+
+        public int AddFromDto(AddTerms terms)
+        {
+            return terms.Term1 + terms.Term2;
+        }
     }
 }

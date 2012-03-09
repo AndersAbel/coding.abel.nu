@@ -24,6 +24,7 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="bfaba124-71c1-4843-b4bc-7a648e2200c6" SourceId="1" SourceUrl="http://localhost:8732/TestService/Calculator/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="a1e3c384-0bb6-4649-9314-ac73a20dbe93" SourceId="1" SourceUrl="http://localhost:8732/TestService/Calculator/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a01f1d68-3f9f-462c-b758-52c9f61fcfa0" SourceId="1" SourceUrl="http://localhost:8732/TestService/Calculator/mex" />
+    <MetadataFile FileName="TestService.xsd" MetadataType="Schema" ID="6a561a6a-9f35-44ea-ba96-5bdcd33a455d" SourceId="1" SourceUrl="http://localhost:8732/TestService/Calculator/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

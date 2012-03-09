@@ -13,5 +13,8 @@ namespace TestService
     {
         [OperationContract]
         int Add(int term1, int term2);
+
+        [OperationContract]
+        int AddFromDto(AddTerms terms);
     }
 }
