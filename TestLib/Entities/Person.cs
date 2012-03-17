@@ -20,13 +20,13 @@ namespace TestLib.Entities
         {
             get
             {
-                //Debug.WriteLine(string.Format("Getting BirthYear of person {0}", PersonId));
+                Debug.WriteLine(string.Format("Getting BirthYear of person {0}", PersonId));
                 return birthYear;
             }
             set
             {
-                //Debug.WriteLine(string.Format("Setting BirthYear of person {0} to {1}",
-                //    PersonId, value));
+                Debug.WriteLine(string.Format("Setting BirthYear of person {0} to {1}",
+                    PersonId, value));
                 birthYear = value;
             }
         }
