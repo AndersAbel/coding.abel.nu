@@ -83,6 +83,9 @@ namespace TestLib.CalculatorClient {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/AddFromDto", ReplyAction="http://tempuri.org/ICalculator/AddFromDtoResponse")]
         int AddFromDto(TestLib.CalculatorClient.AddTerms terms);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/Multiply", ReplyAction="http://tempuri.org/ICalculator/MultiplyResponse")]
+        int Multiply(int factor1, int factor2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,6 +121,10 @@ namespace TestLib.CalculatorClient {
         
         public int AddFromDto(TestLib.CalculatorClient.AddTerms terms) {
             return base.Channel.AddFromDto(terms);
+        }
+        
+        public int Multiply(int factor1, int factor2) {
+            return base.Channel.Multiply(factor1, factor2);
         }
     }
 }

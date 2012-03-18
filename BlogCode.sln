@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingAbelNu.UtilitiesTest"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestService", "TestService\TestService.csproj", "{8E16F066-5269-4957-BD22-8B48A8FB0A69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My32BitLib", "My32BitLib\My32BitLib.csproj", "{87D6F9C6-0D61-485A-AB39-345B789D49F9}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = BlogCode.vsmdi
@@ -55,6 +57,10 @@ Global
 		{8E16F066-5269-4957-BD22-8B48A8FB0A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E16F066-5269-4957-BD22-8B48A8FB0A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E16F066-5269-4957-BD22-8B48A8FB0A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D6F9C6-0D61-485A-AB39-345B789D49F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D6F9C6-0D61-485A-AB39-345B789D49F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D6F9C6-0D61-485A-AB39-345B789D49F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D6F9C6-0D61-485A-AB39-345B789D49F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

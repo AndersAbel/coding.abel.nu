@@ -16,5 +16,8 @@ namespace TestService
 
         [OperationContract]
         int AddFromDto(AddTerms terms);
+
+        [OperationContract]
+        int Multiply(int factor1, int factor2);
     }
 }
