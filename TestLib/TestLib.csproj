@@ -60,6 +60,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DynamicOverloads.cs" />
     <Compile Include="Entities\Brand.cs" />
     <Compile Include="Entities\Car.cs" />
     <Compile Include="Entities\CarBodyStyle.cs" />
