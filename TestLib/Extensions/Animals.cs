@@ -64,6 +64,8 @@ public static class WildHorseExtensions
     {
         horse.Catch();
         horse.Mount();
+        // No need to start, the wild horse is already
+        // running for it's life when someoune mounts.
     }
 }
 }

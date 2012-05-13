@@ -77,8 +77,8 @@ horse.Ride();
         [TestMethod]
         public void TestDynamic()
         {
-            dynamic horse = new Horse();
-            horse.Ride();
+dynamic horse = new Horse();
+horse.Ride();
         }
     }
 
