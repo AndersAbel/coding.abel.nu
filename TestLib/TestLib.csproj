@@ -55,6 +55,7 @@
     <Compile Include="CalcClientUsage.cs" />
     <Compile Include="CalculatorClient\CalculatorClient.cs" />
     <Compile Include="Car.cs" />
+    <Compile Include="CareAboutYourCode\Car.cs" />
     <Compile Include="DBClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
