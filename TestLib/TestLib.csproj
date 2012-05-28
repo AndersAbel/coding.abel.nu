@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Booking.cs" />
+    <Compile Include="BarStoolBooking.cs" />
     <Compile Include="CalcClientUsage.cs" />
     <Compile Include="CalculatorClient\CalculatorClient.cs" />
     <Compile Include="Car.cs" />
