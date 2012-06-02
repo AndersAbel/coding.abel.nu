@@ -82,6 +82,7 @@
     <Compile Include="LibraryCodeTests.cs" />
     <Compile Include="NullHandlingExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextParserTest.cs" />
     <Compile Include="Wcf32BitTest.cs" />
     <Compile Include="YieldReturnTests.cs" />
   </ItemGroup>

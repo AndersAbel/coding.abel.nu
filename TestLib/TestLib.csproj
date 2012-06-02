@@ -37,6 +37,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -118,6 +119,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TextParser\Brand.cs" />
+    <Compile Include="TextParser\BrandReader.cs" />
     <Compile Include="YieldReturn.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +147,9 @@
     <None Include="Service References\CalculatorClient\TestService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="TextParser\CarBrands.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -162,7 +168,6 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CalculatorClient\" />
   </ItemGroup>
