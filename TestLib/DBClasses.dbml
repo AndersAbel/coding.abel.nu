@@ -6,7 +6,10 @@
       <Column Name="Brand" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="RegistrationNumber" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="MadeIn" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Association Name="Car_FrequentDriver" Member="FrequentDrivers" ThisKey="ID" OtherKey="CarID" Type="FrequentDriver" />
+      <Column Name="OwnerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Car_FrequentDriver" Member="FrequentDrivers" ThisKey="RegistrationNumber" OtherKey="RegNo" Type="FrequentDriver" />
+      <Association Name="Car_FrequentDriver1" Member="FrequentDrivers1" ThisKey="ID" OtherKey="CarID" Type="FrequentDriver" />
+      <Association Name="Person_Car" Member="Person" ThisKey="OwnerID" OtherKey="ID" Type="Person" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Persons" Member="Persons">
@@ -19,15 +22,38 @@
       <Column Name="SexID" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
       <Column Name="DisplayName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="PersonStatus" Type="PersonStatus" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BornIn" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LivesIn" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Person_Car" Member="Cars" ThisKey="ID" OtherKey="OwnerID" Type="Car" />
       <Association Name="Person_FrequentDriver" Member="FrequentDrivers" ThisKey="ID" OtherKey="PersonID" Type="FrequentDriver" />
+      <Association Name="Sex_Person" Member="Sex" ThisKey="SexID" OtherKey="ID" Type="Sex" IsForeignKey="true" />
+      <Association Name="City_Person" Member="BornInCity" ThisKey="BornIn" OtherKey="CityID" Type="City" IsForeignKey="true" />
+      <Association Name="City_Person1" Member="LivesInCity" ThisKey="LivesIn" OtherKey="CityID" Type="City" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sexes" Member="Sexes">
+    <Type Name="Sex">
+      <Column Name="ID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Sex_Person" Member="Persons" ThisKey="ID" OtherKey="SexID" Type="Person" />
     </Type>
   </Table>
   <Table Name="dbo.FrequentDrivers" Member="FrequentDrivers">
     <Type Name="FrequentDriver">
       <Column Name="CarID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Car_FrequentDriver" Member="Car" ThisKey="CarID" OtherKey="ID" Type="Car" IsForeignKey="true" />
+      <Column Name="RegNo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Car_FrequentDriver" Member="Car" ThisKey="RegNo" OtherKey="RegistrationNumber" Type="Car" IsForeignKey="true" />
+      <Association Name="Car_FrequentDriver1" Member="Car1" ThisKey="CarID" OtherKey="ID" Type="Car" IsForeignKey="true" />
       <Association Name="Person_FrequentDriver" Member="Person" ThisKey="PersonID" OtherKey="ID" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.City" Member="Cities">
+    <Type Name="City">
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="City_Person" Member="Persons" ThisKey="CityID" OtherKey="BornIn" Type="Person" />
+      <Association Name="City_Person1" Member="Persons1" ThisKey="CityID" OtherKey="LivesIn" Type="Person" />
     </Type>
   </Table>
 </Database>
