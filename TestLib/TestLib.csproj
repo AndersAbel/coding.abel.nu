@@ -72,6 +72,7 @@
     <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PhoneBookEntry.cs" />
+    <Compile Include="Entities\ReadModel\CarReadModelRepository.cs" />
     <Compile Include="Extensions\Animals.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="FirstPage.cs" />
@@ -116,6 +117,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ReadModel\CarReadModel.cs" />
     <Compile Include="Service References\CalculatorClient\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
