@@ -12,7 +12,7 @@ namespace TestLib.Entities
         public int CarId { get; private set; }
 
         [ForeignKey("BrandId")]
-        public Brand Brand { get; set; }
+        public virtual Brand Brand { get; set; }
 
         [ForeignKey("Brand")]
         public int BrandId { get; set; }
