@@ -29,5 +29,7 @@ namespace TestLib.Entities
         [Required]
         [StringLength(20)]
         public string Color { get; set; }
+
+        public int Seats { get; set; }
     }
 }

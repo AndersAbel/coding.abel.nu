@@ -108,6 +108,10 @@
     <Compile Include="Migrations\201202261929004_PhoneBookTable.Designer.cs">
       <DependentUpon>201202261929004_PhoneBookTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201208062212597_CarsSeats.cs" />
+    <Compile Include="Migrations\201208062212597_CarsSeats.Designer.cs">
+      <DependentUpon>201208062212597_CarsSeats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonInfo.cs" />
     <Compile Include="NullHandlingExtensions.cs" />
