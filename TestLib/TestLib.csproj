@@ -122,6 +122,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Entities\ReadModel\CarReadModel.cs" />
+    <Compile Include="PublicProtectedInterface\AntiqueCar.cs" />
+    <Compile Include="PublicProtectedInterface\Car.cs" />
+    <Compile Include="PublicProtectedInterface\ElectricCar.cs" />
     <Compile Include="Service References\CalculatorClient\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
