@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My32BitLib", "My32BitLib\My
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWindowsService", "MyWindowsService\MyWindowsService.csproj", "{B94BCAAA-C9D8-4787-A546-77E40101DBBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication", "MvcApplication\MvcApplication.csproj", "{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = BlogCode.vsmdi
@@ -113,6 +115,16 @@ Global
 		{B94BCAAA-C9D8-4787-A546-77E40101DBBD}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B94BCAAA-C9D8-4787-A546-77E40101DBBD}.Release|x86.ActiveCfg = Release|x86
 		{B94BCAAA-C9D8-4787-A546-77E40101DBBD}.Release|x86.Build.0 = Release|x86
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4D8A9F3C-34B6-4B56-BC2E-E01C64CFE034}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

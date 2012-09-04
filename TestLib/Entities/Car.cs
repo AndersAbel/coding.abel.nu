@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TestLib.Entities
 {
     // Keep this class non-compatible with change tracking proxies.
     public class Car
     {
-        public int CarId { get; private set; }
+        public int CarId { get; set; }
 
         [ForeignKey("BrandId")]
         public virtual Brand Brand { get; set; }

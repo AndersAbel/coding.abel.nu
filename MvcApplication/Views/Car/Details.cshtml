@@ -1,0 +1,40 @@
+﻿@model TestLib.Entities.Car
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Car</legend>
+
+    <div class="display-label">Brand</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Brand.Name)
+    </div>
+
+    <div class="display-label">RegistrationNumber</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RegistrationNumber)
+    </div>
+
+    <div class="display-label">TopSpeed</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TopSpeed)
+    </div>
+
+    <div class="display-label">Color</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Color)
+    </div>
+
+    <div class="display-label">Seats</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Seats)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CarId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
