@@ -85,10 +85,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadModel.cs" />
     <Compile Include="TextParserTest.cs" />
+    <Compile Include="UnitOfWorkTest.cs" />
     <Compile Include="Wcf32BitTest.cs" />
     <Compile Include="YieldReturnTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodingAbelNu.Utilities\CodingAbelNu.Utilities.csproj">
+      <Project>{352DDF77-14F5-423A-98A3-8C96507289F9}</Project>
+      <Name>CodingAbelNu.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestLib\TestLib.csproj">
       <Project>{CCF81307-AF28-4B95-AE7F-2D6D4BBA0445}</Project>
       <Name>TestLib</Name>

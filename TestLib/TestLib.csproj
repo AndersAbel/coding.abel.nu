@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="TextParser\Brand.cs" />
     <Compile Include="TextParser\BrandReader.cs" />
+    <Compile Include="UnitOfWork\UnitOfWorkScope.cs" />
     <Compile Include="YieldReturn.cs" />
   </ItemGroup>
   <ItemGroup>

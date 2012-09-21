@@ -22,7 +22,7 @@ namespace CodingAbelNu.Utilities.ToSelectList
         /// <param name="dataValueField">Lambda expression selecting the value field.</param>
         /// <param name="dataTextField">Lambda expression selecting the text field.</param>
         /// <returns>A generated SelectList.</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
         public static SelectList ToSelectList<TSource, TValue, TText>(this IEnumerable<TSource> source,
             Expression<Func<TSource, TValue>> dataValueField, Expression<Func<TSource, TText>> dataTextField)
         {

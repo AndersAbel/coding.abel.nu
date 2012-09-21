@@ -11,7 +11,7 @@ namespace TestLib.Entities
     {
         public CarsContext(string connectionString)
             : base(connectionString)
-        {}
+        { }
 
         public CarsContext() { }
 
@@ -20,7 +20,18 @@ namespace TestLib.Entities
             Database.SetInitializer(new ValidateDatabase<CarsContext>());
         }
 
-        public DbSet<Car> Cars { get; set; }
+        private DbSet<Car> cars;
+        public DbSet<Car> Cars
+        {
+            get
+            {
+                return cars;
+            }
+            set
+            {
+                cars = value;
+            }
+        }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Gender> Genders { get; set; }

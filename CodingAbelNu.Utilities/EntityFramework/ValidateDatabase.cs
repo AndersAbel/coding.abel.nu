@@ -14,7 +14,7 @@ namespace CodingAbelNu.Utilities.EntityFramework
         {
             if (!context.Database.Exists())
             {
-                throw new ConfigurationException("Database does not exist");
+                throw new ConfigurationErrorsException("Database does not exist");
             }
             else
             {
