@@ -55,6 +55,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="NullHandlers\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToSelectListItems\SelectListItemExtensions.cs" />
     <Compile Include="ToSelectList\Extensions.cs" />
     <Compile Include="WrapInEnumerable\Extensions.cs" />
   </ItemGroup>

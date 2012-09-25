@@ -13,7 +13,7 @@
     <RootNamespace>MvcApplication</RootNamespace>
     <AssemblyName>MvcApplication</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -65,10 +65,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SelectDemoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\SelectDemoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +177,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodingAbelNu.Utilities\CodingAbelNu.Utilities.csproj">
+      <Project>{352DDF77-14F5-423A-98A3-8C96507289F9}</Project>
+      <Name>CodingAbelNu.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestLib\TestLib.csproj">
       <Project>{CCF81307-AF28-4B95-AE7F-2D6D4BBA0445}</Project>
       <Name>TestLib</Name>
@@ -194,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Car\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SelectDemo\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

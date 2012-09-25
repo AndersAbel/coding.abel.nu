@@ -1,0 +1,40 @@
+﻿@model SelectDemoModel
+
+@{
+    ViewBag.Title = "Index.cshtml";
+}
+
+<p>
+Aktuellt värde: @Model.ColorId
+</p>
+
+Tillgängliga val:
+<table>
+<tr><td>Id</td><td>Färg</td></tr>
+@foreach (var si in MvcApplication.Models.SelectDemoModel.Colors)
+{ 
+<tr><td>@si.Value</td><td>@si.Text</td></tr>
+}
+</table>
+
+
+@using(Html.BeginForm())
+{
+<div>
+@Html.LabelFor(m => m.ColorId)
+@Html.DropDownListFor(m => m.ColorId, MvcApplication.Models.SelectDemoModel.Colors,
+Model.ColorId == default(int) ? "" : null )
+@Html.ValidationMessageFor(m => m.ColorId)
+</div>
+<div>
+<p>
+Message: @Model.Message
+</p>
+@Html.LabelFor(m => m.Message)
+@Html.EditorFor(m => m.Message)
+@Html.ValidationMessageFor(m => m.Message)
+</div>
+
+<input type="submit" value="Submit"/>
+<input type="submit" class="cancel" value="Submit w/o Validate" />
+}
