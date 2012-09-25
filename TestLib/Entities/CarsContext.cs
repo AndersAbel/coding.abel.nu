@@ -37,5 +37,7 @@ namespace TestLib.Entities
         public DbSet<Gender> Genders { get; set; }
 
         public DbSet<PhoneBookEntry> PhoneBook { get; set; }
+
+        public DbSet<Shape> Shapes { get; set; }
     }
 }

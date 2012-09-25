@@ -69,10 +69,14 @@
     <Compile Include="Entities\Car.cs" />
     <Compile Include="Entities\CarBodyStyle.cs" />
     <Compile Include="Entities\CarsContext.cs" />
+    <Compile Include="Entities\Circle.cs" />
     <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PhoneBookEntry.cs" />
+    <Compile Include="Entities\Point.cs" />
     <Compile Include="Entities\ReadModel\CarReadModelRepository.cs" />
+    <Compile Include="Entities\Shape.cs" />
+    <Compile Include="Entities\Square.cs" />
     <Compile Include="Extensions\Animals.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="FirstPage.cs" />
@@ -111,6 +115,10 @@
     <Compile Include="Migrations\201208062212597_CarsSeats.cs" />
     <Compile Include="Migrations\201208062212597_CarsSeats.Designer.cs">
       <DependentUpon>201208062212597_CarsSeats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201209251720270_Shape.cs" />
+    <Compile Include="Migrations\201209251720270_Shape.Designer.cs">
+      <DependentUpon>201209251720270_Shape.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonInfo.cs" />
@@ -194,6 +202,11 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201209251720270_Shape.resx">
+      <DependentUpon>201209251720270_Shape.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
