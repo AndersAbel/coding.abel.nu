@@ -120,6 +120,10 @@
     <Compile Include="Migrations\201209251720270_Shape.Designer.cs">
       <DependentUpon>201209251720270_Shape.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201209251802192_ShapeAnimationPath.cs" />
+    <Compile Include="Migrations\201209251802192_ShapeAnimationPath.Designer.cs">
+      <DependentUpon>201209251802192_ShapeAnimationPath.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonInfo.cs" />
     <Compile Include="NullHandlingExtensions.cs" />
@@ -140,6 +144,7 @@
     </Compile>
     <Compile Include="TextParser\Brand.cs" />
     <Compile Include="TextParser\BrandReader.cs" />
+    <Compile Include="UnitOfWork\SharedQueries.cs" />
     <Compile Include="UnitOfWork\UnitOfWorkScope.cs" />
     <Compile Include="YieldReturn.cs" />
   </ItemGroup>
@@ -206,6 +211,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201209251720270_Shape.resx">
       <DependentUpon>201209251720270_Shape.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201209251802192_ShapeAnimationPath.resx">
+      <DependentUpon>201209251802192_ShapeAnimationPath.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
