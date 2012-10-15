@@ -102,5 +102,17 @@ using (var uow = new UnitOfWorkScope<CarsContext>(UnitOfWorkScopePurpose.Writing
                     ctx.Cars.Single(c => c.CarId == carId).Color);
             }
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void TestWritingChildOfReadScope()
+        {
+            using (UnitOfWorkScope<CarsContext>
+                uow1 = new UnitOfWorkScope<CarsContext>(UnitOfWorkScopePurpose.Reading),
+                uow2 = new UnitOfWorkScope<CarsContext>(UnitOfWorkScopePurpose.Writing))
+            { 
+            
+            }
+        }
     }
 }

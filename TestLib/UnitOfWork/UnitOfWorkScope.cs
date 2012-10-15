@@ -52,7 +52,7 @@ public class UnitOfWorkScope<TDbContext> : Disposable
         /// <summary>
         /// Was any unit of work scope using this DbContext opened for writing?
         /// </summary>
-        public bool ContainsWriting { get; set; }
+        public bool ForWriting { get; private set; }
 
         /// <summary>
         /// Switch off guard for direct calls to SaveChanges.
@@ -62,8 +62,10 @@ public class UnitOfWorkScope<TDbContext> : Disposable
         /// <summary>
         /// Ctor.
         /// </summary>
-        public ScopedDbContext()
+        /// <param name="forWriting">Is the root context opened for writing?</param>
+        public ScopedDbContext(bool forWriting)
         {
+            ForWriting = forWriting;
             DbContext = new TDbContext();
             ((IObjectContextAdapter)DbContext).ObjectContext.SavingChanges
                 += GuardAgainstDirectSaves;
@@ -125,12 +127,14 @@ public class UnitOfWorkScope<TDbContext> : Disposable
         this.purpose = purpose;
         if (scopedDbContext == null)
         {
-            scopedDbContext = new ScopedDbContext();
+            scopedDbContext = new ScopedDbContext(purpose == UnitOfWorkScopePurpose.Writing);
             isRoot = true;
         }
-        if (purpose == UnitOfWorkScopePurpose.Writing)
+        if (purpose == UnitOfWorkScopePurpose.Writing && !scopedDbContext.ForWriting)
         {
-            scopedDbContext.ContainsWriting = true;
+            throw new InvalidOperationException(
+                "Can't open a child UnitOfWorkScope for writing when the root scope " +
+                "is opened for reading.");
         }
     }
 
@@ -138,14 +142,8 @@ public class UnitOfWorkScope<TDbContext> : Disposable
     /// Dispose implementation, checking post conditions for purpose and saving.
     /// </summary>
     /// <param name="disposing">Are we disposing?</param>
-    // Throwing exceptions in Dispose methods is not recommended, but this is the only
-    // place we can verify incorrect code from the caller.
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", 
-        "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
     protected override void Dispose(bool disposing)
     {
-        bool containsWriting = false;
-
         if (disposing)
         {
             // We're disposing and SaveChanges wasn't called. That usually
@@ -158,8 +156,6 @@ public class UnitOfWorkScope<TDbContext> : Disposable
                 // a using block.
             }
 
-            containsWriting = scopedDbContext.ContainsWriting;
-
             if (scopedDbContext != null && isRoot)
             {
                 scopedDbContext.Dispose();
@@ -168,13 +164,6 @@ public class UnitOfWorkScope<TDbContext> : Disposable
         }
 
         base.Dispose(disposing);
-
-        // Check and throw after resources are disposed.
-        if (isRoot && containsWriting && purpose != UnitOfWorkScopePurpose.Writing)
-        {
-            throw new InvalidOperationException(
-                "Root unit of work must have writing purpose if any child is for writing");
-        }
     }
 
     /// <summary>
