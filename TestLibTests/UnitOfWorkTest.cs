@@ -74,5 +74,33 @@ namespace TestLibTests
 
             Assert.IsFalse(object.ReferenceEquals(c1, c2));
         }
+
+        [TestMethod]
+        public void UpdateFirstCar()
+        {
+            int carId = 4;
+
+            using (var ts = new TransactionScope())
+            {
+using (var uow = new UnitOfWorkScope<CarsContext>(UnitOfWorkScopePurpose.Writing))
+{
+    Car c = SharedQueries.GetCar(carId);
+    c.Color = "White";
+    uow.SaveChanges();
+}
+
+                using (var ctx = new CarsContext())
+                {
+                    Assert.AreEqual("White",
+                        ctx.Cars.Single(c => c.CarId == carId).Color);
+                }
+            }
+
+            using (var ctx = new CarsContext())
+            {
+                Assert.AreEqual("Red",
+                    ctx.Cars.Single(c => c.CarId == carId).Color);
+            }
+        }
     }
 }
