@@ -80,6 +80,7 @@
     <Compile Include="Extensions\Animals.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="FirstPage.cs" />
+    <Compile Include="LambdaEventSubscribe.cs" />
     <Compile Include="LibraryCode\ApplicationLogger.cs" />
     <Compile Include="LibraryCode\LibraryLogger.cs" />
     <Compile Include="LogWriter.cs" />

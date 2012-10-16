@@ -79,6 +79,7 @@
     <Compile Include="DynamicOverloadsTests.cs" />
     <Compile Include="EntitiesTests.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="LambdaEventSubscribeTests.cs" />
     <Compile Include="LibraryCodeTests.cs" />
     <Compile Include="NavigationPropertiesTest.cs" />
     <Compile Include="NullHandlingExtensionsTest.cs" />
