@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Script-test</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var mySelf = {};
+        mySelf["name"] = "Anders";
+
+        document.write('mySelf["name"] = ' + mySelf["name"] + "<br/>");
+        document.write('mySelf.name = ' + mySelf.name + "<br/>");
+
+        mySelf.sayHello = function () { document.write("Hello!<br/>"); };
+        mySelf.sayHello();
+
+        var getPayment = function (amount) {
+            // Initialize to 0 if no cash property.
+            this.cash = (this.cash || 0) + amount;
+        };
+
+        var showCash = function () {
+            document.write("Current " + this.name + " cash: " + this.cash + "<br/>");
+        };
+
+        mySelf.getPayment = getPayment;
+        mySelf.showCash = showCash;
+        mySelf.getPayment(10);
+        mySelf.showCash();
+
+        computerShop = { getPayment: getPayment, showCash: showCash, name: "Computers inc." };
+        computerShop.getPayment(100);
+        computerShop.showCash();
+
+        getPayment(42);
+        showCash();
+
+        cash = 17;
+        showCash();
+
+        var o = {
+            i: 0,
+            F: function () {
+                var a = function () { this.i = 42; };
+                a();
+                document.write(this.i);
+            }
+        };
+        o.F();
+
+        document.write("<br/>");
+
+        var p = {
+            i: 0,
+            F: function () {
+                var a = function () {
+                    this.i = 42;
+                };
+                a.apply(this);
+                document.write(this.i);
+            }
+        };
+        p.F();
+
+        document.write("<br/>");
+
+        var q = {
+            i: 0,
+            F: function F() {
+                var that = this;
+                var a = function () {
+                    that.i = 42;
+                }
+                a();
+                document.write(this.i);
+            }
+        }
+
+        q.F();
+
+    </script>
+</body>
+</html>
