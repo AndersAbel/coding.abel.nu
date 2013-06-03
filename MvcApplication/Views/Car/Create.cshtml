@@ -22,37 +22,42 @@
             @Html.ValidationMessageFor(model => model.BrandId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.RegistrationNumber)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.RegistrationNumber)
-            @Html.ValidationMessageFor(model => model.RegistrationNumber)
-        </div>
+@Html.EditorEntryFor(model => model.RegistrationNumber)
+@Html.EditorEntryFor(model => model.TopSpeed)
+@Html.EditorEntryFor(model => model.Color)
+@Html.EditorEntryFor(model => model.Seats)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TopSpeed)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TopSpeed)
-            @Html.ValidationMessageFor(model => model.TopSpeed)
-        </div>
+@*<div class="editor-label">
+    @Html.LabelFor(model => model.RegistrationNumber)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.RegistrationNumber)
+    @Html.ValidationMessageFor(model => model.RegistrationNumber)
+</div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Color)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Color)
-            @Html.ValidationMessageFor(model => model.Color)
-        </div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.TopSpeed)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.TopSpeed)
+    @Html.ValidationMessageFor(model => model.TopSpeed)
+</div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Seats)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Seats)
-            @Html.ValidationMessageFor(model => model.Seats)
-        </div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.Color)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Color)
+    @Html.ValidationMessageFor(model => model.Color)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Seats)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Seats)
+    @Html.ValidationMessageFor(model => model.Seats)
+</div>*@
 
         <p>
             <input type="submit" value="Create" />
