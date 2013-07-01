@@ -25,8 +25,21 @@ public static class FormExtensions
         this HtmlHelper<TModel> html,
         Expression<Func<TModel, TValue>> expression)
     {
-        return BuildFormEntry(html.LabelFor(expression), 
+        return BuildFormEntry(html.LabelWithRequiredMarkerFor(expression), 
             html.EditorFor(expression), html.ValidationMessageFor(expression));
+    }
+
+    private static MvcHtmlString LabelWithRequiredMarkerFor<TModel, TValue>(
+        this HtmlHelper<TModel> html,
+        Expression<Func<TModel, TValue>> expression)
+    {
+        var label = html.LabelFor(expression);
+        if (ModelMetadata.FromLambdaExpression(expression, html.ViewData).IsRequired)
+        {
+            label = new MvcHtmlString(label.ToString() +
+                " <span class=\"required-marker\">*</span>");
+        }
+        return label;
     }
 
     private static MvcHtmlString BuildFormEntry(

@@ -20,17 +20,20 @@ namespace TestLib.Entities
 
         [Required]
         [StringLength(6)]
+        [Display(Name="Registration Number")]
         public string RegistrationNumber { get; set; }
 
         [Column("BodyStyle", TypeName = "int")]
         public CarBodyStyle BodyStyle { get; set; }
 
+        [Display(Name="Top Speed")]
         public int? TopSpeed { get; set; }
 
         [Required]
         [StringLength(20)]
         public string Color { get; set; }
 
+        [Display(Name="Number of Seats")]
         public int Seats { get; set; }
     }
 }
