@@ -101,6 +101,7 @@
     <Compile Include="TextParserTest.cs" />
     <Compile Include="UnitOfWorkTest.cs" />
     <Compile Include="LinqSelectHelperTest.cs" />
+    <Compile Include="ExceptionSafetyTests.cs" />
     <Compile Include="Wcf32BitTest.cs" />
     <Compile Include="YieldReturnTests.cs" />
   </ItemGroup>

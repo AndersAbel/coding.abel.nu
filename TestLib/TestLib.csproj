@@ -77,6 +77,9 @@
     <Compile Include="Entities\ReadModel\CarReadModelRepository.cs" />
     <Compile Include="Entities\Shape.cs" />
     <Compile Include="Entities\Square.cs" />
+    <Compile Include="ExceptionSafety\ExceptionSafe.cs" />
+    <Compile Include="ExceptionSafety\NotExceptionSafe.cs" />
+    <Compile Include="ExceptionSafety\PreciousResource.cs" />
     <Compile Include="Extensions\Animals.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="FirstPage.cs" />
