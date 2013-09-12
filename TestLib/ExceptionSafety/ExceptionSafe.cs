@@ -25,7 +25,7 @@ public class ExceptionSafe : IDisposable
             resource2 = tmp2;
             tmp2 = null;
         }
-        catch (Exception)
+        finally
         {
             if (tmp1 != null)
             {
@@ -36,8 +36,6 @@ public class ExceptionSafe : IDisposable
             {
                 tmp2.Dispose();
             }
-
-            throw;
         }
     }
 
