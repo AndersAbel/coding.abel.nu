@@ -4,6 +4,8 @@ using TestLib.ExceptionSafety;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
+#pragma warning disable 0642
+
 namespace TestLibTests
 {
     [TestClass]
