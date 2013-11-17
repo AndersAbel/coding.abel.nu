@@ -6,6 +6,7 @@ namespace TestLib.Migrations
     using System.Linq;
     using TestLib.Entities;
     using System.Collections.Generic;
+    using CodingAbelNu.Utilities.EntityFramework;
 
     public sealed class Configuration : DbMigrationsConfiguration<TestLib.Entities.CarsContext>
     {
@@ -64,6 +65,8 @@ namespace TestLib.Migrations
             context.PhoneBook.AddOrUpdate(pbe => pbe.Name,
                 new PhoneBookEntry() { Name = "Charlie", PhoneNumber = "1234" },
                 new PhoneBookEntry() { Name = "Johhny", PhoneNumber = "9876" });
+
+            context.Seed<TestLib.Entities.CarBodyStyle>();
         }
     }
 }

@@ -23,7 +23,6 @@ namespace TestLib.Entities
         [Display(Name="Registration Number")]
         public string RegistrationNumber { get; set; }
 
-        [Column("BodyStyle", TypeName = "int")]
         public CarBodyStyle BodyStyle { get; set; }
 
         [Display(Name="Top Speed")]

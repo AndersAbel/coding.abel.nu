@@ -129,6 +129,10 @@
     <Compile Include="Migrations\201209251720270_Shape.Designer.cs">
       <DependentUpon>201209251720270_Shape.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311161512378_CarBodyStyle.cs" />
+    <Compile Include="Migrations\201311161512378_CarBodyStyle.Designer.cs">
+      <DependentUpon>201311161512378_CarBodyStyle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonInfo.cs" />
     <Compile Include="NullHandlingExtensions.cs" />
@@ -216,6 +220,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201209251720270_Shape.resx">
       <DependentUpon>201209251720270_Shape.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311161512378_CarBodyStyle.resx">
+      <DependentUpon>201311161512378_CarBodyStyle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Disposable.cs" />
+    <Compile Include="EntityFramework\EnumSeeder.cs" />
     <Compile Include="EntityFramework\ValidateDatabase.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="LinqSelectMergeExtension.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -7,9 +8,14 @@ namespace TestLib.Entities
 {
     public enum CarBodyStyle
     { 
-        // Start at 1 to avoid 0 which is int's default value.
+        [Description("Not Defined")]
+        NotDefined = 0,
+
         Sedan = 1,
-        StationWagon,
-        HatchBack
+
+        [Description("Station Wagon")]
+        StationWagon = 2,
+        
+        Hatchback = 3
     }
 }
