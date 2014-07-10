@@ -6,4 +6,9 @@ public static class Utility
   {
     Console.WriteLine("Utility.Method(object)");
   }  
+
+  public static void DefaultMethod(int i = 7)
+  {
+    Console.WriteLine("Utility.DefaultMethod({0})", i);
+  }
 }

@@ -11,4 +11,9 @@ public static class Utility
   {
     Console.WriteLine("Utility.Method(int)");
   }
+
+  public static void DefaultMethod(int i = 42)
+  {
+      Console.WriteLine("Utility.DefaultMethod({0})", i);
+  }
 }
