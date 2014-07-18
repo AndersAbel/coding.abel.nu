@@ -118,6 +118,7 @@
     <Compile Include="ExceptionSafetyTests.cs" />
     <Compile Include="TestforExceptions.cs" />
     <Compile Include="EnumSeederTests.cs" />
+    <Compile Include="TestingCoverage.cs" />
     <Compile Include="Wcf32BitTest.cs" />
     <Compile Include="YieldReturnTests.cs" />
   </ItemGroup>

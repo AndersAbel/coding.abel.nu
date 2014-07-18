@@ -151,6 +151,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TestingCoverage\ValueFormatter.cs" />
     <Compile Include="TextParser\Brand.cs" />
     <Compile Include="TextParser\BrandReader.cs" />
     <Compile Include="UnitOfWork\SharedQueries.cs" />
