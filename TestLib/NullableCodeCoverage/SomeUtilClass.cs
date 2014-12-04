@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace TestLib.NullableCodeCoverage
 {
-    using MyNumericType = System.Nullable<IntStruct>;
-
     public struct IntStruct
     {
         public IntStruct(int value)
@@ -50,11 +48,9 @@ namespace TestLib.NullableCodeCoverage
             return "No!";
         }
 
-        static readonly IntStruct SingleDigitLimit = new IntStruct(10);
-
-        public static string IsSingleDigit(MyNumericType value)
+        public static string IsSingleDigit(IntStruct? value)
         {
-            if (value < SingleDigitLimit)
+            if (value < new IntStruct(10))
             {
                 return "Yes!";
             }
