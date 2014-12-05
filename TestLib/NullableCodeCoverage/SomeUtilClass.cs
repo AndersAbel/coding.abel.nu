@@ -26,8 +26,18 @@ namespace TestLib.NullableCodeCoverage
         }
     }
 
-    public class SomeUtilClass1
+    public class SomeUtilClass
     {
+        public static string IsSingleDigit(IntStruct? value)
+        {
+            if (value < new IntStruct(10))
+            {
+                return "Yes!";
+            }
+
+            return "No!";
+        }
+
         public static string IsTooLate(DateTime? value)
         {
             if (value < DateTime.Now)
@@ -48,14 +58,14 @@ namespace TestLib.NullableCodeCoverage
             return "No!";
         }
 
-        public static string IsSingleDigit(IntStruct? value)
+        public static string IsDefaultInt(int? value)
         {
-            if (value < new IntStruct(10))
+            if(value == default(int))
             {
-                return "Yes!";
+                return "Default value";
             }
-
-            return "No!";
+            
+            return "Something else";
         }
 
         public class IntClass

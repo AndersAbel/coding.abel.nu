@@ -11,22 +11,25 @@ namespace TestLibTests
         public void TestImplementation1()
         {
             Assert.AreEqual("No!",
-                SomeUtilClass1.IsTooLate(DateTime.Now.AddDays(-1)));
+                SomeUtilClass.IsTooLate(DateTime.Now.AddDays(-1)));
             Assert.AreEqual("Yes :-(",
-                SomeUtilClass1.IsTooLate(DateTime.Now.AddDays(1)));
+                SomeUtilClass.IsTooLate(DateTime.Now.AddDays(1)));
 
-            Assert.AreEqual("Yes!", SomeUtilClass1.IsSingleDigit(9));
-            Assert.AreEqual("No!", SomeUtilClass1.IsSingleDigit(10));
+            Assert.AreEqual("Yes!", SomeUtilClass.IsSingleDigit(9));
+            Assert.AreEqual("No!", SomeUtilClass.IsSingleDigit(10));
 
-            Assert.AreEqual("Yes!", SomeUtilClass1.IsSingleDigit(
+            Assert.AreEqual("Yes!", SomeUtilClass.IsSingleDigit(
                 new IntStruct(9)));
-            Assert.AreEqual("No!", SomeUtilClass1.IsSingleDigit(
+            Assert.AreEqual("No!", SomeUtilClass.IsSingleDigit(
                 new IntStruct(10)));
 
-            Assert.AreEqual("Yes!", SomeUtilClass1.IsSingleDigit(
-                new SomeUtilClass1.IntClass(9)));
-            Assert.AreEqual("No!", SomeUtilClass1.IsSingleDigit(
-                new SomeUtilClass1.IntClass(10)));
+            Assert.AreEqual("Yes!", SomeUtilClass.IsSingleDigit(
+                new SomeUtilClass.IntClass(9)));
+            Assert.AreEqual("No!", SomeUtilClass.IsSingleDigit(
+                new SomeUtilClass.IntClass(10)));
+
+            Assert.AreEqual("Default value", SomeUtilClass.IsDefaultInt(0));
+            Assert.AreEqual("Something else", SomeUtilClass.IsDefaultInt(1));
         }
 
         [TestMethod]
@@ -34,9 +37,10 @@ namespace TestLibTests
         {
             TestImplementation1();
 
-            Assert.AreEqual("Yes :-(", SomeUtilClass1.IsTooLate(null));
-            Assert.AreEqual("No!", SomeUtilClass1.IsSingleDigit(
+            Assert.AreEqual("Yes :-(", SomeUtilClass.IsTooLate(null));
+            Assert.AreEqual("No!", SomeUtilClass.IsSingleDigit(
                 (IntStruct?)null));
+            Assert.AreEqual("No!", SomeUtilClass.IsSingleDigit((int?)null));
         }
 
         [TestMethod]
