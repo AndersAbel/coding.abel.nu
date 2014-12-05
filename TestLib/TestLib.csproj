@@ -134,6 +134,7 @@
       <DependentUpon>201311161512378_CarBodyStyle.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NullableCodeCoverage\SomeUtilClass.cs" />
     <Compile Include="PersonInfo.cs" />
     <Compile Include="NullHandlingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
